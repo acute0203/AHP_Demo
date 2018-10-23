@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AHP</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <script type="text/javascript" src="js/jquery-1.2.6.js"></script>
+    <script type="text/javascript" src="js/ahpCalc.obj.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <table class="main">
+                    <td class="name firstLayer">製作的基礎</td>
+                    <!--first layer weight-->
+                    <td class="weight firstLayer">0.0</td>
+
+                    <td>
+                        <table>
+                            <tr class="secondLayer">
+                                <td class="name">負責人的能力</td>
+                                <td class=weight>0.0</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="name thirdLayer">負責人的經驗水準</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">負責人的資歷</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">負責人過去作品銷售紀錄</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">負責人過去作品參展與得獎數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">負責人曾經執行的最大片預算</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">管理能力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">負責人預算控管能力</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">公司營運及財務狀況</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="secondLayer">
+                                <td class="name">企業能力</td>
+                                <td class=weight>0.0</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="name thirdLayer">製作團隊組合</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">製作團隊的資歷</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作團隊過去作品銷售紀錄</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作團隊過去作品得獎數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">資金籌措能力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">過去公司投融資之成效</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">過去公司獎補助之成效</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </table>
+            </tr>
+
+            <tr>
+                <table class="main">
+                    <td class="name firstLayer">製作內容之競爭力</td>
+                    <!--first layer weight-->
+                    <td class="weight firstLayer">0.0</td>
+                    <td>
+                        <table>
+                            <tr class="secondLayer">
+                                <td class="name">製作能力</td>
+                                <td class=weight>0.0</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="name thirdLayer">編劇能力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">編劇的資歷、學歷</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">編劇過去作品平均收視率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">編劇過去作品得獎數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">製作人能力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">製作人的資歷、學歷</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作人專案資源整合能力</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作人過去作品平均收視率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作人過去作品得獎數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">導演能力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">導演的資歷、學歷</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">導演過去作品平均收視率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">導演過去作品得獎數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">演員(男/女主角)能力及受歡迎程度</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">演員的資歷</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">演員過去作品平均收視率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">演員過去得獎數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">演員媒體曝光度(包含搜尋引擎及社群平台搜尋次數、粉絲專頁人數)</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">演員的知名度</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">製作團隊默契</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">製作團隊合作次數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作團隊平均收視率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">新銳成員潛力</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                            <tr  class="secondLayer">
+                                <td class="name">作品內容核心元素</td>
+                                <td class=weight>0.0</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="name thirdLayer">題材的潛力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">市場的流行趨勢變化與需求</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">題材類型(潮流，與當時社會氛圍接軌程度)</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">題材的創新程度</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">劇本流行性</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">劇本的行銷國際程度</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">同類型電視劇過去平均收視率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">同類型電視劇過去得獎數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">相關文學改編之IP作品</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                            <tr  class="secondLayer">
+                                <td class="name">完工能力</td>
+                                <td class=weight>0.0</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="name thirdLayer">電視台播放確認</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">播放頻道</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">各頻道收視率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">預算之合理性</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">專案預算規模</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">預算執行狀況及合理性</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">資金到位情況</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">製作期間是否已有多元管道之資金支持</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">自有資金投入程度</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">製作管理能力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">製作團隊執行效率</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作團隊向心力</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作經費支用管控能力</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">製作時程管理</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">契約確認</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">已完成之委製製作合約</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">已完成之合作意向書</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </table>
+            </tr>
+
+            <tr >
+                <table class="main">
+                    <td class="name firstLayer">價值創造(獲利性)</td>
+                    <!--first layer weight-->
+                    <td class="weight firstLayer">0.0</td>
+                    <td>
+                        <table>
+                            <tr class="secondLayer">
+                                <td class="name">目標市場行銷</td>
+                                <td class=weight>0.0</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="name thirdLayer">銷售契約</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">影片版權播放契約</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">周邊商品契約</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">行銷能力</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">電視劇行銷企劃能力</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">已完成之行銷合約</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">合作行銷廠商質量(過去行銷專案的實績)</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                            <tr  class="secondLayer">
+                                <td class="name">潛在獲利能力</td>
+                                <td class=weight>0.0</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td class="name thirdLayer">收入管道</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">衍生之周邊商品收入</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">潛在海內外版權收入</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">置入性行銷收入、冠名、贊助</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">預售情形</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">電視台或新媒體預購版權家數</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">預售版權收入(電視台承諾購買版權)</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">投資報酬率</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">海外市場銷售限制</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">預估獲利收益之情形</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name thirdLayer">擴散效果</td>
+                                            <td class=weight>0.0</td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td class="name">潛在合作行銷廠商(媒體、企業無形資產、品牌效益、贊助等)</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">傳統媒體(如報紙、雜誌、廣播)的擴散效果</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">新媒體(如OTT、Fox、Netflix平台)的擴散效果</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">社群媒體(如Facebook, PTT)的討論程度</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="name">通路(無線電視、頻道商)合作的擴散效果</td>
+                                                        <td class=weight>0.0</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tbody>
+                        </table>
+                    </td>
+                </table>
+            </tr>
+    </table>
+    <script>
+    function gup( name, url ) {
+    if (!url) url = decodeURI(location.href);
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( url );
+    return results == null ? null : results[1];
+}
+        //console.log(gup('resultDict'));
+        //var resultDict = JSON.parse(gup('resultDict'));
+        var resultDict = JSON.parse(localStorage.resultDict);
+        $(".main").each(function() {
+            //update first layer
+            //console.log($(".main")[i].getElementsByClassName('firstLayer name')[0].innerText);
+            //console.log($(".main")[i].getElementsByClassName('firstLayer weight')[0].innerText);
+            console.log("1rd");
+            var firstLayerName = $(this).children().children().children(".name").text();
+            var firstLayerWeight = $(this).children().children().children(".weight").text();
+            $(this).children().children().children(".weight").html(resultDict[firstLayerName]);
+            console.log(firstLayerName+":"+resultDict[firstLayerName]);
+
+            var secondLayerObj = $(this).children().children().children().children().children().children();
+            secondLayerObj.each(function() {
+                console.log("2rd");
+                var secondLayerName = $(this).children(".name").text();
+                $(this).children(".weight").html(resultDict[secondLayerName]);
+                console.log(secondLayerName+":"+resultDict[secondLayerName]);
+
+                var secondLayerWeight = $(this).children(".weight").text();
+                var thirdLayerObj = $(this).children().children().children().children();
+
+                thirdLayerObj.each(function() {
+                    console.log("3rd");
+                    var thirdLayerName = $(this).children(".name").text();
+                    var thirdLayerWeight = $(this).children(".weight").text();
+                    $(this).children(".weight").html(resultDict[thirdLayerName]);
+                    console.log(thirdLayerName+":"+resultDict[thirdLayerName]);
+
+                    var forthLayerObj = $(this).children().children().children().children();
+                    forthLayerObj.each(function() {
+                        console.log("4rd");
+                        var forthLayerName = $(this).children(".name").text();
+                        console.log(forthLayerName+":"+resultDict[forthLayerName]);
+                        $(this).children(".weight").html(resultDict[forthLayerName]);
+                        var forthLayerWeight = $(this).children(".weight").text();
+                        console.log(forthLayerWeight);
+
+                    });
+                });
+            });
+
+        });
+    </script>
+</body>
